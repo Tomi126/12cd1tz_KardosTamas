@@ -22,7 +22,13 @@ app.get("/", (req,res) => {
 })
 
 
-
+app.get("/v", (req,res) => {
+    const sql = "SELECT * FROM versenyzok"
+    db.query(sql, (err, result) => {
+        if(err) return res.json(err)
+        return res.json(result)
+    })
+})
 
 
 
